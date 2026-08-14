@@ -1,9 +1,20 @@
 'use client';
-export function PrimeiroComponente(){
+
+interface PrimeiroComponenteProgs {
+  mensagem: string;
+  mensagemBotao: string
+  //
+}
+
+export const PrimeiroComponente = ({mensagem}: PrimeiroComponenteProgs) => { 
   
-  function clique(){
-  //  console.log("Você clicou no botão!");
-  alert("Você clicou no botão!");
+ // function clique(){
+  // console.log("Você clicou no botão!");
+  // alert("Você clicou no botão!");
+  
+   const clique =() => {
+   console.log("Você clicou no botão!");
+   alert("Você clicou no botão!");
   }
 
     return(
