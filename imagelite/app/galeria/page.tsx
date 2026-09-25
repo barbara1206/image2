@@ -25,6 +25,7 @@ export default function Galeria() {
         imageName={image.name}
         imageUrl={image.url}
         imageSize={image.size}
+        extension={image.extension}
         uploadDate={image.uploadDate} />
     )
   }
@@ -51,8 +52,8 @@ export default function Galeria() {
                    <option value="GIF">GIF</option>
                     <option value="JPEG">JPEG</option>
               </select>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={searchImages}>Search </button>
-              <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Add New </button>
+              <button className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded" onClick={searchImages}>Search </button>
+              <button className="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">Add New </button>
             </div>
         </section>
 
