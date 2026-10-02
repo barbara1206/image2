@@ -13,7 +13,7 @@ export default function Galeria() {
   const [extension, setExtension] = useState<string>('')
 
   async function searchImages() {
-    const result = await useService.buscar();
+    const result = await useService.buscar(query, extension);
     setImage(result);
     console.log(query, extension)
   }
@@ -52,8 +52,8 @@ export default function Galeria() {
                    <option value="GIF">GIF</option>
                     <option value="JPEG">JPEG</option>
               </select>
-              <button className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded" onClick={searchImages}>Search </button>
-              <button className="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">Add New </button>
+              <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded" onClick={searchImages}>Search </button>
+              <button className="bg-purple-900 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded">Add New </button>
             </div>
         </section>
 

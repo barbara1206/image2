@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 interface TemplateProps{
     children: React.ReactNode;
 
 }
-export const Template = ({ children }: TemplateProps) => {
+export const Template = ({ children }:   TemplateProps) => {
     return(
         <>
         <Header />
@@ -15,19 +16,27 @@ export const Template = ({ children }: TemplateProps) => {
 }
 const Header: React.FC = () => {
     return(
-        <header className="bg-blue-900 text-white py-3">
+        <header className="bg-purple-900 text-blue-50 py-3">
+          
         <div className="container mx-auto px-4 flex justify-between items-center px-4">
-            <h1>ImageLite</h1>
+            <h1> ImageLite </h1>
             </div>
             </header>
     );
 }
 const Footer: React.FC = () => {
     return(
-        <footer className="bg-blue-950 text-white py-3">
+        <footer className="bg-blue-950 text-blue-50 py-3">
         <div className="container mx-auto px-4 flex justify-between items-center px-4">
             <h1>Developed by Bárbara </h1>
             </div>
             </footer>
     );
 }
+
+
+
+
+
+
+
