@@ -1,6 +1,8 @@
 
-package io.spring.image.demo.application;
+package io.spring.image.demo.application.Images;
 
+import io.spring.image.demo.application.Images.ImageDTO;
+import io.spring.image.demo.application.Images.ImageMapper;
 import io.spring.image.demo.domain.entity.Image;
 import io.spring.image.demo.domain.enums.ImageExtension;
 import io.spring.image.demo.domain.service.ImageService;
