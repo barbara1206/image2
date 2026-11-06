@@ -38,8 +38,23 @@ public class UserServiceImp implements UserService {
         encodePassword(user);
         return userRepository.save(user);
     }
+    @Override
 
-
-
+    public AcessToken autenticate(String email, String password){
+        var user = getByEmail(email);
+        if(user == null){
+            return null;
+        }
+        boolean matches = passwordEncorder.matches(password, user.getPassword());
+        if(matches){
+            return jwtService.generateToken(user);
+        }
+        return null;
+    }
+    private void encodePassword(User user){
+        String ramPassword = user.getPassword();
+        String encodePassword = passwordEncoder.encode(ramPassword);
+        user.setPassword(encodePassword);
+    }
 }
 
