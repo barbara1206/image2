@@ -1,6 +1,7 @@
 package io.spring.image.demo.application.users;
 
 
+import io.spring.image.demo.application.jwt.JwtService;
 import io.spring.image.demo.domain.AccessToken;
 import io.spring.image.demo.domain.entity.User;
 import io.spring.image.demo.domain.exeption.DuplocatedTupleExeption;
@@ -10,8 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import static org.postgresql.util.PasswordUtil.encodePassword;
 
 @Service
 @RequiredArgsConstructor
@@ -40,12 +39,12 @@ public class UserServiceImp implements UserService {
     }
     @Override
 
-    public AcessToken autenticate(String email, String password){
+    public AccessToken autenticate(String email, String password){
         var user = getByEmail(email);
         if(user == null){
             return null;
         }
-        boolean matches = passwordEncorder.matches(password, user.getPassword());
+        boolean matches = passwordEncoder.matches(password, user.getPassword());
         if(matches){
             return jwtService.generateToken(user);
         }
